@@ -1,14 +1,12 @@
-BootStrap: yum
-OSVersion: 7
-MirrorURL: https://www.mirrorservice.org/sites/mirror.centos.org/%{OSVERSION}/os/$basearch/
-UpdateURL: https://www.mirrorservice.org/sites/mirror.centos.org/%{OSVERSION}/updates/$basearch/
-Include: yum
+BootStrap: debootstrap
+OSVersion: xenial
+MirrorURL: http://archive.ubuntu.com/ubuntu/
+
 
 %post
 
 	echo "##### Installing Development Tools YUM group #####"
-	yum -y groupinstall "Development Tools"
-	yum install -y wget git binutils binutils-devel cmake gcc gcc-gfortran gcc-c++ libgfortran readline readline-devel bzip2 bzip2-devel xz xz-libs lzma xz-devel xz-lzma-compat pcre pcre-devel libcurl libcurl-devel make
+	apt-get -y install build-essential wget git binutils binutils-dev cmake gcc g++ gfortran bzip2  xz-utils liblzma-dev make libcurl4-openssl-dev libreadline-dev libpcre3-dev libbz2-dev zlib1g-dev
 
 	echo "##### getting the R code #####"
 
