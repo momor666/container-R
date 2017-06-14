@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: ubuntu:trusty
+
+%post
+
+	echo "##### Installing Development Tools YUM group #####"
+        #apt-get -y install software-properties-common
+        #apt-add-repository -y universe
+	apt-get update
+	apt-get -y install "r-base" 
+
+	echo "##### getting the R code #####"
+
+%test
+        R --version
+
+%runscript
+	echo "##### Loading R #####"
+	exec R 

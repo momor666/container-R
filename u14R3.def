@@ -1,0 +1,21 @@
+BootStrap: debootstrap
+OSVersion: trusty
+MirrorURL: http://archive.ubuntu.com/ubuntu/
+
+
+%post
+
+	echo "##### Installing Development Tools YUM group #####"
+        apt-get -y install software-properties-common
+        apt-add-repository -y universe
+        apt-get -update
+
+	echo "##### getting the R code #####"
+	apt-get -y install r-base 
+
+%test
+        R --version
+
+%runscript
+	echo "##### Loading R #####"
+	exec R 
