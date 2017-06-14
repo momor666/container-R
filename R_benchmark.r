@@ -31,6 +31,7 @@ runs <- 3			# Number of times the tests are executed
 times <- rep(0, 15); dim(times) <- c(5,3)
 require(Matrix)		# Optimized matrix operations
 require(SuppDists)	# Optimized random number generators
+library(methods)
 #Runif <- rMWC1019	# The fast uniform number generator
 Runif <- runif
 # If you don't have SuppDists, you can use: Runif <- runif
