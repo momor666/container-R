@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: ubuntu:trusty
+From: ubuntu:latest
 
 %post
 
